@@ -91,7 +91,8 @@ class ToDo extends React.Component {
 
         <section className="todo">
 
-          
+        <Form addTodo={this.addItem}handleInputChange={this.handleInputChange}/>
+
           <div>
             <ul>
               { this.state.todoList.map(item => (
