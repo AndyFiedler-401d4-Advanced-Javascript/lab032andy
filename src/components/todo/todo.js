@@ -7,6 +7,8 @@ import Form from './form';
 
 import './todo.scss';
 
+
+const itemsPerPage = 10;
 class ToDo extends React.Component {
   constructor(props) {
     super(props);
@@ -15,6 +17,7 @@ class ToDo extends React.Component {
       item: {},
       showDetails: false,
       details: {},
+      page: 1,
     };
   }
 
@@ -91,7 +94,7 @@ class ToDo extends React.Component {
 
         <section className="todo">
 
-        <Form addTodo={this.addItem}handleInputChange={this.handleInputChange}/>
+        <Form addTodo={this.addItem} handleInputChange={this.handleInputChange}/>
 
           <div>
             <ul>
@@ -114,6 +117,7 @@ class ToDo extends React.Component {
             </ul>
           </div>
         </section>
+
 
         <When condition={this.state.showDetails}>
           <Modal title="To Do Item" close={this.toggleDetails}>
